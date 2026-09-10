@@ -1,5 +1,14 @@
-from django.http import HttpResponse
+from django.shortcuts import redirect, render
+
+from .models import Note
 
 
 def index(request):
-    return HttpResponse("Olá mundo! Este é o app notes de Tecnologias Web do Insper.")
+    if request.method == 'POST':
+        title = request.POST.get('titulo')
+        content = request.POST.get('detalhes')
+        Note.objects.create(title=title, content=content)
+        return redirect('index')
+    else:
+        all_notes = Note.objects.all()
+        return render(request, 'notes/index.html', {'notes': all_notes})
