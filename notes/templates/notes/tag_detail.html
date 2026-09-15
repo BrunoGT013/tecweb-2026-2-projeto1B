@@ -1,0 +1,26 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+<main class="container">
+  <h2 class="page-title">Anotações da tag "{{ tag.name }}"</h2>
+
+  <div class="card-container">
+    {% for note in notes %}
+    <div class="card">
+      <h3 class="card-title">{{ note.title }}</h3>
+      <div class="card-content">
+        <p>{{ note.content }}</p>
+      </div>
+      <div class="card-actions">
+        <a class="card-action" href="{% url 'edit' note.id %}" title="Editar anotação">editar</a>
+        <a class="card-action" href="{% url 'delete' note.id %}" title="Apagar anotação">apagar</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="page-actions">
+    <a class="btn btn-cancel" href="{% url 'tags' %}">Voltar</a>
+  </div>
+</main>
+{% endblock %}

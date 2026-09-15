@@ -276,3 +276,81 @@ body {
 .form-card-edit .confirm-actions {
   margin-bottom: 0;
 }
+
+/* Campo de tag: o formulário passou a ter três campos, então a altura fixa
+   dá lugar a uma altura mínima */
+.form-card {
+  height: auto;
+  min-height: 120px;
+}
+
+.form-card-tag {
+  border: none;
+  outline: none;
+  font-family: 'inter', sans-serif;
+  font-size: 0.85rem;
+  height: 16px;
+  color: #4c4c4c;
+}
+
+/* Tag exibida dentro do cartão */
+.card-tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background-color: rgba(44, 44, 44, 0.12);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #2c2c2c;
+}
+
+/* Botões de navegação entre as páginas (ver tags, voltar) */
+.page-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.page-actions .btn {
+  font-family: "Roboto", sans-serif;
+  color: #2c2c2c;
+  text-decoration: none;
+}
+
+/* Listagem de tags */
+.tag-list {
+  max-width: 375px;
+  margin: 2rem auto;
+  padding: 10px 18px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.tag-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(44, 44, 44, 0.1);
+}
+
+.tag-list li:last-child {
+  border-bottom: none;
+}
+
+.tag-link {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: #2c2c2c;
+}
+
+.tag-link:hover {
+  color: #e0af26;
+}
+
+.tag-empty {
+  font-size: 0.9rem;
+  color: #4c4c4c;
+}

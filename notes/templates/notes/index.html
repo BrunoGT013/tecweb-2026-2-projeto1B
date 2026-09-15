@@ -15,8 +15,18 @@
       name="detalhes"
       placeholder="Digite o conteúdo..."
     ></textarea>
+    <input
+      class="form-card-tag"
+      type="text"
+      name="tag"
+      placeholder="Tag (opcional)"
+    />
     <button class="btn" type="submit">Criar</button>
   </form>
+
+  <div class="page-actions">
+    <a class="btn" href="{% url 'tags' %}">Ver todas as tags</a>
+  </div>
 
   <div class="card-container">
     {% for note in notes %}
@@ -25,6 +35,9 @@
       <div class="card-content">
         <p>{{ note.content }}</p>
       </div>
+      {% if note.tag %}
+      <a class="card-tag" href="{% url 'tag_detail' note.tag.id %}">{{ note.tag.name }}</a>
+      {% endif %}
       <div class="card-actions">
         <a class="card-action" href="{% url 'edit' note.id %}" title="Editar anotação">editar</a>
         <a class="card-action" href="{% url 'delete' note.id %}" title="Apagar anotação">apagar</a>
