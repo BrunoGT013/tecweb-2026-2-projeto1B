@@ -1,0 +1,22 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+<main class="container">
+  <h2 class="page-title">Deseja mesmo apagar esta anotação?</h2>
+
+  <div class="card-container">
+    <div class="card">
+      <h3 class="card-title">{{ note.title }}</h3>
+      <div class="card-content">
+        <p>{{ note.content }}</p>
+      </div>
+    </div>
+  </div>
+
+  <form class="confirm-actions" method="post" action="{% url 'delete' note.id %}">
+    {% csrf_token %}
+    <button class="btn" type="submit">Apagar</button>
+    <a class="btn btn-cancel" href="{% url 'index' %}">Cancelar</a>
+  </form>
+</main>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+<main class="container">
+  <h2 class="page-title">Editar anotação</h2>
+
+  <form class="form-card form-card-edit" method="post" action="{% url 'edit' note.id %}">
+    {% csrf_token %}
+    <input
+      class="form-card-title"
+      type="text"
+      name="titulo"
+      placeholder="Título"
+      value="{{ note.title }}"
+    />
+    <textarea
+      class="autoresize"
+      name="detalhes"
+      placeholder="Digite o conteúdo..."
+    >{{ note.content }}</textarea>
+    <div class="confirm-actions">
+      <button class="btn" type="submit">Salvar</button>
+      <a class="btn btn-cancel" href="{% url 'index' %}">Cancelar</a>
+    </div>
+  </form>
+</main>
+{% endblock %}
