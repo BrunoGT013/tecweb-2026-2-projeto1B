@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres
+    container_name: pg-docker
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: getit
+      POSTGRES_USER: getituser
+      POSTGRES_PASSWORD: getitsenha
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
