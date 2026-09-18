@@ -2,4 +2,4 @@
 
 Aplicação de anotações feita em Django.
 
-**Link da aplicação:** _(preencher após o deploy no Render)_
+**Link da aplicação:** https://tecweb-2026-2-projeto1b-0ivz.onrender.com
