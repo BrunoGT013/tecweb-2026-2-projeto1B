@@ -21,9 +21,9 @@
     <input
       class="form-card-tag"
       type="text"
-      name="tag"
-      placeholder="Tag (opcional)"
-      value="{{ note.tag.name|default:'' }}"
+      name="tags"
+      placeholder="Tags separadas por vírgula (opcional)"
+      value="{{ tags_atuais }}"
     />
     <div class="confirm-actions">
       <button class="btn" type="submit">Salvar</button>

@@ -11,6 +11,11 @@
       <div class="card-content">
         <p>{{ note.content }}</p>
       </div>
+      <div class="card-tags">
+        {% for t in note.tags.all %}
+        <a class="card-tag" href="{% url 'tag_detail' t.id %}">{{ t.name }}</a>
+        {% endfor %}
+      </div>
       <div class="card-actions">
         <a class="card-action" href="{% url 'edit' note.id %}" title="Editar anotação">editar</a>
         <a class="card-action" href="{% url 'delete' note.id %}" title="Apagar anotação">apagar</a>

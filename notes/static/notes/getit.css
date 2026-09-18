@@ -293,7 +293,18 @@ body {
   color: #4c4c4c;
 }
 
-/* Tag exibida dentro do cartão */
+/* Tags exibidas dentro do cartão */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.card-tags .card-tag {
+  margin-top: 0;
+}
+
 .card-tag {
   display: inline-block;
   margin-top: 10px;
